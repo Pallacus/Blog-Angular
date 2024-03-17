@@ -6,6 +6,24 @@
     font-weight: 900;
   }
 }
+.barra-secundaria{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+.filtro{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  & p{
+    margin: 5px auto;
+  }
+  & select{
+    margin: 0 0 0 10px;
+    padding: 0;
+  }
+}
 .box {
   margin: 5px;
   padding: 15px;

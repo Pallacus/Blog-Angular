@@ -44,5 +44,12 @@ console.log(this.arrPosts);
     return this.arrPosts.filter((post) => post.categoria === category);
   }
 
+  /**Devuelve un array de las categorias 
+  */
+  getCategories() {
+    // return [...new Set(SERIES.map((serie) => serie.canal))];
+    return [...new Set(this.arrPosts.map((post) => post.categoria))]
+  }
+
   constructor() {}
 }
