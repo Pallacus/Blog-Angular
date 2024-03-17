@@ -1,0 +1,14 @@
+<div class="container">
+@if (arrPosts) {
+<h2>Publicaciones:</h2>
+@for (post of arrPosts; track $index) {
+<div class="box">
+  <h3>{{ post.titulo }}</h3>
+  <h6>{{ post.autor }}</h6>
+  <img [src]="post.imagen" alt="{{ post.titulo }}"/>
+  <p>{{ post.texto }}</p>
+</div>
+} }@else{
+<h2>No hay publicaciones.</h2>
+}
+</div>
