@@ -6,6 +6,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { PostsService } from '../../services/posts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -17,6 +18,7 @@ import { PostsService } from '../../services/posts.service';
 export class FormularioComponent {
 
   postService = inject(PostsService);
+  router = inject(Router);
   
   formulario: FormGroup = new FormGroup({
     titulo: new FormControl(),
@@ -29,7 +31,8 @@ export class FormularioComponent {
   onSubmit() {
     //TODO:comporbar que se hayan rellenado los campos
     this.postService.createPost(this.formulario.value);
-    console.log('done');
+    this.router.navigate(['/posts']);
+
     
     
   }
