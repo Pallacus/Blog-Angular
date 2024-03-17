@@ -5,12 +5,13 @@
   & h2{
     font-weight: 900;
   }
+  padding-top: 10px;
 }
 .barra-secundaria{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 20px;
+  margin: 0 10px 0 10px;
 }
 .filtro{
   display: flex;

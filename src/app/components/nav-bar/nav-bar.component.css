@@ -1,0 +1,17 @@
+.container{
+    background-color: antiquewhite;
+}
+
+.btn{
+border: none;
+transition: 0.2s;
+}
+
+.active{
+    border: none;
+    font-weight: bold;
+    font-style: bold;
+    &.nuevo{
+        font-style: italic;
+    }
+}
