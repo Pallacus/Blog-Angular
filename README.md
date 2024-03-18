@@ -20,7 +20,8 @@
     - Y por último definiremos el método getByCategoria(cat) para que nos devuelva los post de una categoría concreta
 - El siguiente elemento a definir es el componente ListaPosts
     - Se trata de un componente que, recibe del servicio todos los Post y los muestra de manera ordenada.
-#    - (opcional) Disponer de una serie de botones que nos permitan filtrar por categoría.
+    - (opcional) Disponer de una serie de botones que nos permitan filtrar por categoría.
+    
 - Por último, desarrollaremos el componente Formulario
     - Este componente representa un formulario con los diferentes campos del
 modelo Post.
