@@ -1,5 +1,10 @@
+.whole{
+    width: 100%;
+    background-color: wheat;
+}
+
 .container{
-    background-color: antiquewhite;
+    padding: 0;
 }
 
 .btn{

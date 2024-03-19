@@ -1,17 +1,27 @@
 <div class="container">
     <h2>Nueva pubicación:</h2>
+    
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label class="form-label">Título:</label>
       <input type="text" class="form-control" formControlName="titulo" />
+      @if (checkError("titulo", "required")) {
+        <p class="error">Debes darle un título al post.</p>
+      }
     </div>
     <div class="mb-3">
       <label class="form-label">Texto:</label>
       <input type="text" class="form-control" formControlName="texto" />
+      @if (checkError("texto", "required")) {
+        <p class="error">Es imprescindible escribir el post.</p>
+      }
     </div>
     <div class="mb-3">
       <label class="form-label">Autor:</label>
       <input type="text" class="form-control" formControlName="autor" />
+      @if (checkError("autor", "required")) {
+        <p class="error">Se dee introducir el nombre del autor.</p>
+      }
     </div>
     <div class="mb-3">
       <label class="form-label">Imagen:</label>
@@ -20,7 +30,12 @@
     <div class="mb-3">
       <label class="form-label">Categoría:</label>
       <input type="text" class="form-control" formControlName="categoria" />
+      @if (checkError("categoria", "required")) {
+        <p class="error">El post necesita una categoria.</p>
+      }
     </div>
-    <button type="submit" class="btn btn-primary" >Enviar</button>
+   
+    <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button>
+
 </form>
 </div>

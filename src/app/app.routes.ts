@@ -3,6 +3,7 @@ import { ListaPostsComponent } from './components/lista-posts/lista-posts.compon
 import { FormularioComponent } from './components/formulario/formulario.component';
 
 export const routes: Routes = [
-    { path: 'posts', component: ListaPostsComponent },
-    { path: 'posts/new', component: FormularioComponent}
+  { path: 'posts', component: ListaPostsComponent },
+  { path: 'posts/new', component: FormularioComponent },
+  { path: '**', redirectTo: '/posts' },
 ];
