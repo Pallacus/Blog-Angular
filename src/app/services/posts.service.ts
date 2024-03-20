@@ -5,7 +5,6 @@ import { Post } from '../interfaces/post.interface';
   providedIn: 'root',
 })
 export class PostsService {
-
   arrPosts: Post[] = [
     // importar posts de meloheinventado y Pallacus
     {
@@ -45,11 +44,23 @@ export class PostsService {
     {
       titulo: 'Una gran característica de Windows™',
       texto:
-        '"Una muy buena característica de Windows: Arrastrar y soltar!  Estaba navegando por el blog Puntogeek del amigo Juanguis y vi algo que me hizo recordar que existen cosas buenas en Windows y que uno no debe de olvidar cuando uno discute con algún fanático ofuzcado del sistema operativo del Pinguino, Linux.   Se trata de la muy conocida característica del Drag and Drop o como se lo conoce en español Arrastrar y Soltar. A continuación podemos ver en una imagen las bondades de esa característica:"      http://geeksroom.com/2008/08/una-muy-buena-caracteristica-de-windows-arrastrar-y-soltar/2363 Publicat per Pallacus a les 3:03 Cap comentari: Envia per correu electrònicBlogThis!Comparteix a TwitterComparteix a FacebookComparteix a Pinterest Etiquetes de comentaris: humor Inauguració. Obro el bloc d\'en Pallacus, per explicar-vos les meves paranoies, per explicar-vos coses divertides i per donar-vos la tabarra. Així que: Esteu avisats! _ Publicat per Pallacus a les 0:01 2 comentaris: Envia per correu electrònicBlogThis!Comparteix a TwitterComparteix a FacebookComparteix a Pinterest Inici Subscriure\'s a: Missatges (Atom) Suggeriments Remena: \t',
+        '"Una muy buena característica de Windows: Arrastrar y soltar!  Estaba navegando por el blog Puntogeek del amigo Juanguis y vi algo que me hizo recordar que existen cosas buenas en Windows y que uno no debe de olvidar cuando uno discute con algún fanático ofuzcado del sistema operativo del Pinguino, Linux.   Se trata de la muy conocida característica del Drag and Drop o como se lo conoce en español Arrastrar y Soltar. A continuación podemos ver en una imagen las bondades de esa característica:"',
       autor: 'Anónimo',
       imagen: 'http://geeksroom.com/wp-content/uploads/2008/08/draganddrop.jpg',
       fecha: new Date(
         'Tue Mar 19 2024 09:58:42 GMT+0100 (Hora estàndard del Centre d’Europa)'
+      ),
+      categoria: 'Informática',
+    },
+    {
+      titulo: 'Que es un sobreático?',
+      texto:
+        '"Hay edificios que tienen entresuelo, otros tienen ático, pero, porque hay plantas con un nombre especial?   Cuando todas las plantas de un edificio se construyen a partir del mismo plano (todas son iguales) se denominan ordinalmente: primero, segundo, tercero...   Vamos a poner de ejemplo un caso sencillo. Cuando todas las plantas tienen balcón, pero la primera no, esta es diferente y por tanto tiene otra distribución interna. En este caso se suele denominar planta entresuelo.    En el caso de la planta mas alta, suele aprovecharse para hacer una terraza en vez de un balcón. Esta diferencia hace que lo denominemos ático. Ergo si tanto la última planta como la penúltima tienen balcones o terrazas diferentes la planta superior se denommina sobreático." ',
+      autor: 'Albert',
+      imagen:
+        'https://pbs.twimg.com/media/GJIPal3XwAAuc2O?format=png&name=900x900',
+      fecha: new Date(
+        'Wed Mar 20 2024 18:08:42 GMT+0100 (Hora estàndard del Centre d’Europa)'
       ),
       categoria: 'Informática',
     },
@@ -86,16 +97,16 @@ export class PostsService {
 
   /**Devuelve un array de las categorias
    */
-  getCategories():string[] {
+  getCategories(): string[] {
     this.arrPosts = JSON.parse(localStorage['arrPosts']);
-    return [...new Set(this.arrPosts.map((post) => post.categoria))];   // map genera un array de categorias, Set crea un array a partir de map sin repeticiones.
+    return [...new Set(this.arrPosts.map((post) => post.categoria))]; // map genera un array de categorias, Set crea un array a partir de map sin repeticiones.
   }
 
   constructor() {
-  if (localStorage.getItem('arrPosts')) {
-      this.arrPosts = JSON.parse(localStorage.getItem('arrPosts')!)
+    if (localStorage.getItem('arrPosts')) {
+      this.arrPosts = JSON.parse(localStorage.getItem('arrPosts')!);
     } else {
-    localStorage.setItem('arrPosts', JSON.stringify(this.arrPosts));
+      localStorage.setItem('arrPosts', JSON.stringify(this.arrPosts));
     }
-  }  
+  }
 }
